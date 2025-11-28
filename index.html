@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Project: AI Hỗ Trợ Việc Nhà - Khối 3</title>
+    <!-- Tải Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Cấu hình Font và Tailwind -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f9fc;
+        }
+        .tab-content {
+            display: none;
+            /* Tạo khoảng cách mượt mà khi chuyển tab */
+            transition: opacity 0.3s ease-in-out;
+            opacity: 0;
+        }
+        .tab-content.active {
+            display: block;
+            opacity: 1;
+        }
+        /* Style cho bảng Rubric */
+        #tab-tiuchi th, #tab-tiuchi td {
+            vertical-align: top;
+            text-align: center;
+        }
+        #tab-tiuchi .text-left {
+            text-align: left;
+        }
+        .image-placeholder {
+            min-height: 100px;
+            background-color: #e0f2f1;
+            color: #047878;
+            border: 2px dashed #0f766e;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            font-style: italic;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="p-4 sm:p-8">
+
+    <div class="max-w-6xl mx-auto bg-white shadow-2xl rounded-xl overflow-hidden">
+
+        <!-- Header -->
+        <header class="bg-teal-600 p-6 sm:p-8 text-white">
+            <div class="flex items-center mb-2">
+                <!-- Thêm hình ảnh minh họa Robot cho Header -->
+                <div class="w-12 h-12 mr-4 flex-shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white"><rect x="2" y="7" width="20" height="15" rx="4" ry="4"/><path d="M17 14h1"/><path d="M6 14h1"/><path d="M10 10h4"/><path d="M12 2v5"/><path d="M15 2v5"/><path d="M9 2v5"/></svg>
+                </div>
+                <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">
+                    <span class="bg-yellow-300 text-teal-800 px-2 py-1 rounded-lg shadow-lg mr-2 text-2xl">AI</span> HỖ TRỢ VIỆC NHÀ
+                </h1>
+            </div>
+            <p class="text-xl mt-2 font-light">MINI PROJECT MÔN TIN HỌC KHỐI 3</p>
+            <p class="text-sm mt-1 opacity-80">KIỂM TRA HỌC KÌ I – NĂM HỌC 2025-2026 (Thời gian làm bài: 4 tiết)</p>
+        </header>
+
+        <!-- Navigation Tabs Container -->
+        <nav id="tabs-container" class="flex flex-wrap border-b border-gray-200 p-4 bg-gray-50">
+            <!-- Các nút tab sẽ được chèn bởi JS -->
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="p-4 sm:p-8">
+
+            <!-- Tab 1: Bối cảnh dự án -->
+            <div id="tab-boiduyet" class="tab-content active">
+                <h2 class="text-2xl font-bold text-teal-600 mb-4 flex items-center">
+                    <svg class="w-6 h-6 mr-2 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                    1. Bối cảnh dự án: AI Hỗ Trợ Việc Nhà
+                </h2>
+                <div class="image-placeholder">
+                    
+                </div>
+                <div class="space-y-4 text-gray-700 leading-relaxed bg-teal-50 p-4 rounded-lg border-l-4 border-teal-500 shadow-inner">
+                    <!-- Đã sửa lỗi định dạng ** (việc nhà) -->
+                    <p>Trong cuộc sống hằng ngày, các gia đình phải thực hiện rất nhiều công việc (việc nhà) như nấu ăn, dọn dẹp, sắp xếp lịch sinh hoạt, theo dõi sức khỏe, hay quản lý chi tiêu. Những công việc này đôi khi khiến mọi người mất nhiều thời gian và dễ bị quá tải.</p>
+                    <p class="font-semibold text-teal-800">
+                        Ngày nay, các công cụ AI đã trở nên quen thuộc và có thể hỗ trợ con người thực hiện những tác vụ nhỏ nhưng quan trọng — từ gợi ý thực đơn, nhắc nhở lịch học, phân loại đồ vật, đến dự đoán nhu cầu mua sắm. Việc áp dụng AI vào việc nhà giúp tối ưu hóa thời gian và năng lượng cho gia đình.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Tab 2: Mục tiêu Đánh giá -->
+            <div id="tab-muctieu" class="tab-content">
+                <h2 class="text-2xl font-bold text-teal-600 mb-4 flex items-center">
+                    <svg class="w-6 h-6 mr-2 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    2. Mục tiêu đánh giá
+                </h2>
+                <div class="grid md:grid-cols-3 gap-4">
+                    <!-- Về Công nghệ: Loại bỏ Icon -->
+                    <div class="p-4 bg-green-100 rounded-lg shadow-md border-b-4 border-green-500 flex flex-col items-center">
+                        <h3 class="font-bold text-xl text-green-700 mb-2 mt-2">Về Công nghệ:</h3>
+                        <p class="text-green-800 text-center">Lựa chọn công cụ AI phù hợp.</p>
+                    </div>
+                    <!-- Về Tư duy: Loại bỏ Icon -->
+                    <div class="p-4 bg-yellow-100 rounded-lg shadow-md border-b-4 border-yellow-500 flex flex-col items-center">
+                        <h3 class="font-bold text-xl text-yellow-700 mb-2 mt-2">Về Tư duy:</h3>
+                        <p class="text-yellow-800 text-center">Sử dụng các từ khóa (prompts) để yêu cầu AI thực hiện nhiệm vụ, phát hiện kế hoạch lặp lại, đề xuất ý tưởng.</p>
+                    </div>
+                    <!-- Về Kỹ năng: Loại bỏ Icon -->
+                    <div class="p-4 bg-red-100 rounded-lg shadow-md border-b-4 border-red-500 flex flex-col items-center">
+                        <h3 class="font-bold text-xl text-red-700 mb-2 mt-2">Về Kỹ năng:</h3>
+                        <p class="text-red-800 text-center">Đánh giá giải pháp bằng tiêu chí thiết kế.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 3: Công cụ sử dụng -->
+            <div id="tab-congcu" class="tab-content">
+                <h2 class="text-2xl font-bold text-teal-600 mb-4 flex items-center">
+                    <svg class="w-6 h-6 mr-2 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37a1.724 1.724 0 002.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    3. Công cụ sử dụng
+                </h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="p-5 bg-blue-100 rounded-xl border border-blue-400 shadow-lg">
+                        <div class="image-placeholder bg-blue-50 border-blue-300 text-blue-800 mb-4">
+                            
+                        </div>
+                        <h3 class="text-xl font-bold text-blue-800 mb-2 flex items-center">
+                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M7 3a1 1 0 000 2h6a1 1 0 100-2H7zM4 5h12a2 2 0 012 2v10a2 2 0 01-2 2H4a2 2 0 01-2-2V7a2 2 0 012-2z"></path></svg>
+                            Trợ lý ảo chính (AI Chatbot)
+                        </h3>
+                        <p class="text-blue-700">Chatbot (Chat GPT / Gemini / Bing Chat... hoặc nền tảng AI giáo dục của trường) dưới sự giám sát của GV.</p>
+                    </div>
+                    <div class="p-5 bg-purple-100 rounded-xl border border-purple-400 shadow-lg">
+                        <div class="image-placeholder bg-purple-50 border-purple-300 text-purple-800 mb-4">
+                            
+                        </div>
+                        <h3 class="text-xl font-bold text-purple-800 mb-2 flex items-center">
+                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z"></path><path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd"></path></svg>
+                            Công cụ hỗ trợ
+                        </h3>
+                        <ul class="list-disc list-inside text-purple-700 space-y-1 ml-4">
+                            <li>Giấy, bút màu</li>
+                            <li>Sticky notes (giấy ghi chú)</li>
+                            <li>Phần mềm (ví dụ: phần mềm vẽ, văn bản)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 4: Thời gian & Nhiệm vụ thực hiện -->
+            <div id="tab-thoigian" class="tab-content">
+                <h2 class="text-2xl font-bold text-teal-600 mb-4 flex items-center">
+                    <svg class="w-6 h-6 mr-2 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    4. Thời gian - Nhiệm vụ thực hiện (4 Tiết)
+                </h2>
+                <div class="image-placeholder">
+                    
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full divide-y divide-gray-200 rounded-lg shadow-lg border border-gray-200">
+                        <thead class="bg-teal-600 text-white">
+                            <tr>
+                                <th class="px-4 py-3 text-left text-sm font-medium">Thời gian</th>
+                                <th class="px-6 py-3 text-left text-sm font-medium">Trạm dừng chân</th>
+                                <th class="px-6 py-3 text-left text-sm font-medium">Nhiệm vụ chi tiết</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-100">
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-4 py-4 whitespace-nowrap text-sm font-bold text-teal-700">Tiết 1</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-base font-semibold text-gray-800">Xác định vấn đề và lựa chọn công cụ AI</td>
+                                <td class="px-6 py-4 text-sm text-gray-700">
+                                    <ul class="list-disc list-inside space-y-1 ml-4">
+                                        <li>HS chọn công việc nhà muốn AI hỗ trợ.</li>
+                                        <li>HS lựa chọn công cụ phù hợp, giải thích lý do lựa chọn.</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-gray-50 bg-teal-50">
+                                <td class="px-4 py-4 whitespace-nowrap text-sm font-bold text-teal-700">Tiết 2</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-base font-semibold text-gray-800">Dùng AI để tạo ra sản phẩm đơn giản</td>
+                                <td class="px-6 py-4 text-sm text-gray-700">
+                                    <ul class="list-disc list-inside space-y-1 ml-4">
+                                        <li>HS viết từ khóa (prompts).</li>
+                                        <li>HS yêu cầu AI tạo sản phẩm: hình ảnh, danh sách, mô tả,…</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-4 py-4 whitespace-nowrap text-sm font-bold text-teal-700">Tiết 3</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-base font-semibold text-gray-800">Phát hiện công việc lặp lại và nhu cầu dùng AI</td>
+                                <td class="px-6 py-4 text-sm text-gray-700">
+                                    <ul class="list-disc list-inside space-y-1 ml-4">
+                                        <li>HS liệt kê các công việc lặp lại hàng ngày.</li>
+                                        <li>HS trình bày lý do vì sao cần AI hỗ trợ.</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-gray-50 bg-teal-50">
+                                <td class="px-4 py-4 whitespace-nowrap text-sm font-bold text-teal-700">Tiết 4</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-base font-semibold text-gray-800">Trình bày ý tưởng thiết bị AI hỗ trợ gia đình</td>
+                                <td class="px-6 py-4 text-sm text-gray-700">
+                                    <ul class="list-disc list-inside space-y-1 ml-4">
+                                        <li>HS mô tả chức năng, cách hoạt động cho thiết bị mới.</li>
+                                        <li>HS vẽ bản thiết kế.</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Tab 5: Tiêu chí Đánh giá (Rubric) -->
+            <div id="tab-tiuchi" class="tab-content">
+                <h2 class="text-2xl font-bold text-teal-600 mb-4 flex items-center">
+                    <svg class="w-6 h-6 mr-2 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path></svg>
+                    5. Tiêu chí đánh giá (Rubric)
+                </h2>
+                <div class="image-placeholder">
+                    
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full divide-y divide-gray-200 border border-gray-200 rounded-lg shadow-xl">
+                        <thead class="bg-yellow-500 text-teal-900 sticky top-0">
+                            <tr>
+                                <th rowspan="2" class="px-3 py-2 text-center text-sm font-medium border-r border-yellow-600">STT</th>
+                                <th rowspan="2" class="px-6 py-2 text-left text-sm font-medium border-r border-yellow-600">Tiêu chí (MTB)</th>
+                                <th colspan="4" class="px-6 py-2 text-center text-sm font-medium border-b border-yellow-600">Mức độ đạt được</th>
+                            </tr>
+                            <tr class="bg-yellow-400 text-teal-800">
+                                <th class="px-3 py-2 text-center text-xs font-semibold border-r border-yellow-500 w-1/5">Mức 1 (Chưa đạt)</th>
+                                <th class="px-3 py-2 text-center text-xs font-semibold border-r border-yellow-500 w-1/5">Mức 2 (Đang hình thành)</th>
+                                <th class="px-3 py-2 text-center text-xs font-semibold border-r border-yellow-500 w-1/5">Mức 3 (Đạt)</th>
+                                <th class="px-3 py-2 text-center text-xs font-semibold w-1/5">Mức 4 (Vượt)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-100 text-xs sm:text-sm">
+                            <!-- Tiêu chí 1: Lựa chọn công cụ AI -->
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-3 py-3 text-center font-medium">1</td>
+                                <td class="px-6 py-3 text-left font-semibold text-teal-600">MTB 1.2.a – Lựa chọn công cụ AI phù hợp</td>
+                                <td class="px-3 py-3 bg-red-50 text-red-800">Chọn công cụ không phù hợp</td>
+                                <td class="px-3 py-3 bg-yellow-50 text-yellow-800">Chọn công cụ nhưng chưa nêu lý do</td>
+                                <td class="px-3 py-3 bg-green-50 text-green-800">Chọn đúng công cụ và giải thích đơn giản</td>
+                                <td class="px-3 py-3 bg-blue-50 text-blue-800">Giải thích rõ ràng + so sánh công cụ</td>
+                            </tr>
+                            <!-- Tiêu chí 2: Tạo sản phẩm đơn giản bằng AI -->
+                            <tr class="hover:bg-gray-50 bg-gray-50">
+                                <td class="px-3 py-3 text-center font-medium">2</td>
+                                <td class="px-6 py-3 text-left font-semibold text-teal-600">MTB 1.2.b – Tạo sản phẩm đơn giản bằng AI</td>
+                                <td class="px-3 py-3 bg-red-50 text-red-800">Từ khóa chưa rõ, AI không tạo được sản phẩm</td>
+                                <td class="px-3 py-3 bg-yellow-50 text-yellow-800">Có sản phẩm nhưng chưa đầy đủ</td>
+                                <td class="px-3 py-3 bg-green-50 text-green-800">Sản phẩm đúng yêu cầu</td>
+                                <td class="px-3 py-3 bg-blue-50 text-blue-800">Tinh chỉnh để sản phẩm tốt hơn</td>
+                            </tr>
+                            <!-- Tiêu chí 3: Phát hiện công việc lặp lại -->
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-3 py-3 text-center font-medium">3</td>
+                                <td class="px-6 py-3 text-left font-semibold text-teal-600">MTB 1.3.a – Phát hiện công việc lặp lại</td>
+                                <td class="px-3 py-3 bg-red-50 text-red-800">Không nêu được công việc lặp lại</td>
+                                <td class="px-3 py-3 bg-yellow-50 text-yellow-800">Nêu công việc nhưng chưa hợp lý</td>
+                                <td class="px-3 py-3 bg-green-50 text-green-800">Nêu đúng và có lý do</td>
+                                <td class="px-3 py-3 bg-blue-50 text-blue-800">Nêu thêm lợi ích/giải pháp mở rộng</td>
+                            </tr>
+                            <!-- Tiêu chí 4: Trình bày ý tưởng thiết bị AI -->
+                            <tr class="hover:bg-gray-50 bg-gray-50">
+                                <td class="px-3 py-3 text-center font-medium">4</td>
+                                <td class="px-6 py-3 text-left font-semibold text-teal-600">MTB 1.3.c – Trình bày ý tưởng thiết bị AI</td>
+                                <td class="px-3 py-3 bg-red-50 text-red-800">Mô tả sơ sài</td>
+                                <td class="px-3 py-3 bg-yellow-50 text-yellow-800">Mô tả có chức năng nhưng chưa rõ</td>
+                                <td class="px-3 py-3 bg-green-50 text-green-800">Đầy đủ tên – chức năng – cách hoạt động</td>
+                                <td class="px-3 py-3 bg-blue-50 text-blue-800">Có điểm đặc biệt + vẽ minh họa sáng tạo</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- Footer/Liên hệ -->
+            <footer class="mt-10 pt-6 border-t border-gray-200 text-center text-sm text-gray-500">
+                <p>MÔN TIN HỌC - KHỐI 3</p>
+                <p>Vui lòng tham khảo kỹ các mục tiêu và tiêu chí đánh giá cho dự án AI Hỗ Trợ Việc Nhà.</p>
+            </footer>
+
+        </main>
+    </div>
+
+    <!-- JavaScript cho chức năng Tabs -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabsData = [
+                { id: 'boiduyet', label: '1. Bối cảnh' },
+                { id: 'muctieu', label: '2. Mục tiêu' },
+                { id: 'congcu', label: '3. Công cụ' },
+                { id: 'thoigian', label: '4. Thời gian & Nhiệm vụ' },
+                { id: 'tiuchi', label: '5. Tiêu chí Đánh giá' }
+            ];
+
+            const tabsContainer = document.getElementById('tabs-container');
+            let activeTabId = 'boiduyet'; // Tab mặc định
+
+            // Hàm hiển thị nội dung tab
+            function showTab(tabId) {
+                // Ẩn tất cả nội dung
+                document.querySelectorAll('.tab-content').forEach(content => {
+                    content.classList.remove('active');
+                });
+                // Hiển thị nội dung tab được chọn
+                const newActiveContent = document.getElementById('tab-' + tabId);
+                if (newActiveContent) {
+                    newActiveContent.classList.add('active');
+                }
+
+                // Cập nhật style cho các nút tab
+                document.querySelectorAll('.tab-button').forEach(button => {
+                    button.classList.remove('bg-teal-600', 'text-white', 'shadow-md');
+                    button.classList.add('text-teal-700', 'hover:bg-teal-100', 'bg-white', 'border', 'border-teal-300');
+                });
+
+                const newActiveButton = document.getElementById('btn-' + tabId);
+                if (newActiveButton) {
+                    newActiveButton.classList.remove('text-teal-700', 'hover:bg-teal-100', 'bg-white', 'border', 'border-teal-300');
+                    newActiveButton.classList.add('bg-teal-600', 'text-white', 'shadow-md');
+                }
+                
+                activeTabId = tabId;
+            }
+
+            // Tạo các nút tab và gán sự kiện
+            tabsData.forEach(tab => {
+                const button = document.createElement('button');
+                button.id = 'btn-' + tab.id;
+                // Thiết lập class mặc định
+                button.className = 'tab-button px-4 py-2 text-xs sm:text-sm md:text-base font-medium rounded-full mr-2 mb-2 transition duration-300 whitespace-nowrap';
+                button.textContent = tab.label;
+                
+                // Gán sự kiện click
+                button.addEventListener('click', () => {
+                    showTab(tab.id);
+                });
+
+                tabsContainer.appendChild(button);
+            });
+
+            // Hiển thị tab mặc định khi tải trang
+            showTab(activeTabId);
+        });
+    </script>
+</body>
+</html>
